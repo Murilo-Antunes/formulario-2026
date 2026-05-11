@@ -2,7 +2,7 @@
 
 const getDadosCep = async (cep) =>{
     
-    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const url = `https://brasilapi.com.br/api/cep/v1/${cep}`
     
     try {
         //fetch é um metodo que faz uam requisição e precisa de uma url como parametro
@@ -32,10 +32,10 @@ const getDadosCep = async (cep) =>{
     }
     inputbox.classList.remove('error')
 
-    document.getElementById('endereco').value = dadosCep.logradouro
-    document.getElementById('bairro').value = dadosCep.bairro
-    document.getElementById('cidade').value = dadosCep.localidade
-    document.getElementById('estado').value = dadosCep.uf
+    document.getElementById('endereco').value = dadosCep.street
+    document.getElementById('bairro').value = dadosCep.neighborhood
+    document.getElementById('cidade').value = dadosCep.city
+    document.getElementById('estado').value = dadosCep.state
 
     console.log(dadosCep)
 } 
